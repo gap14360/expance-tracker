@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/profile.css" />
+  </head>
+  <body>
+    <h1 style="text-align: center">User : <%=uname %></h1>
+    <br />
+    <div
+      class="formarea"
+      style="text-align: center; margin-left: auto; margin-right: auto"
+    >
+
+
+        <input type="text" name="id" disabled value="XXX" id="dbid" />
+        <br /><br />
+
+        <input
+          type="text"
+          name="fullname"
+          placeholder="Enter Full Name here"
+          value="XXX"
+          id="fname"
+        />
+        <br /><br />
+
+        <button type="submit">Change</button>
+        <button>Reset</button>
+        <br /><br />
+
+        <a href="/">Home</a>
+        <a href="/users">Users</a>
+      </form>
+    </div>
+
+    <script type="text/javascript" src="/js/profile.js"></script>
+  </body>
+</html>

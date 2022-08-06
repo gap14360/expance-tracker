@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+    <h1>Expense Tracker</h1>
+    <p id="status">Status : Loading Page...</p>
+    <br />
+    <div
+      class="formarea"
+      style="text-align: center; margin-left: auto; margin-right: auto"
+    >
+      <form action="/addexpense" method="post">
+        <!--Item the Cost Went for-->
+        <label for="item">Item : </label>
+        <input
+          type="text"
+          id="item"
+          name="item"
+          placeholder="Enter the Item or short description"
+          required
+        />
+        <br /><br />
+
+        <!--The Amount expense or invested-->
+        <label for="amount">Number : </label>
+        <input
+          type="number"
+          id="amount"
+          name="amount"
+          placeholder="Enter the amount"
+          required
+        />
+        <br /><br />
+
+        <!-- Drop down to select which user -->
+        <label for="userslist">User : </label>
+        <select name="userslist" required id="userslist">
+          <!--Write Code here to Get the users from DB -->
+          <% for(let i of users_list) {%>
+          <option value="<%= i.name %>"><%= i.name %></option>
+          <% }; %>
+        </select>
+        <br /><br />
+
+        <!--Radio Button to select whether it's an addition or subtraction -->
+        <label for="mode1">Mode (Expense or Addition) : </label>
+        <input type="radio" name="mode" value="add" id="mode1" checked />
+        <label for="mode1">Add</label>
+        <input type="radio" name="mode" value="subtract" id="mode2" />
+        <label for="mode2">Subtract</label>
+        <br /><br />
+
+        <!--Long Description if neccessary-->
+        <label for="description">Description : </label>
+        <textarea
+          id="description"
+          name="description"
+          rows="4"
+          cols="50"
+          placeholder="Enter Long Description (Optional)"
+        ></textarea>
+        <br /><br />
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <br /><br />
+
+        <a href="/admin">Admin</a>
+        <a href="/users">Users</a>
+      </form>
+    </div>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/home.js"></script>
+  </body>
+</html>

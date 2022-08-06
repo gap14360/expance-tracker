@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Users - Expenses</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/users.css" />
+  </head>
+  <body>
+    <h1 style="text-align: center">Users - Expenses</h1>
+    <table style="text-align: center; margin-right: auto; margin-left: auto">
+      <tr>
+        <th>Item</th>
+        <th>Number</th>
+        <th>User</th>
+        <th>Mode</th>
+        <th>Description</th>
+        <th>Modify/Delete</th>
+      </tr>
+      <% for(let i of expenses_list) { %>
+      <tr>
+        <td><%=i.item%></td>
+        <td><%=i.amount%></td>
+        <td><%=i.user%></td>
+        <td><%=i.mode%></td>
+        <td><%=i.description%></td>
+        <td><a href="#">Modify</a><a href="#">Delete</a></td>
+      </tr>
+      <% } %>
+    </table>
+    <br /><br />
+
+    <a href="/">Go Home</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.2/underscore-umd-min.js"></script>
+    <script src="/js/users.js"></script>
+  </body>
+</html>
